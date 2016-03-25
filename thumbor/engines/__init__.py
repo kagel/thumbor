@@ -257,11 +257,11 @@ class BaseEngine(object):
 
         if orientation != 1 and override_exif:
             segment = self._get_exif_segment()
-                try:
-                    segment.primary['Orientation'] = [1]
-                    self.exif = segment.get_data()
-                except:
-                    pass
+            try:
+                segment.primary['Orientation'] = [1]
+                self.exif = segment.get_data()
+            except:
+                pass
 
     def gen_image(self):
         raise NotImplementedError()
